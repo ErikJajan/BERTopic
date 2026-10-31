@@ -16,6 +16,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from xml.sax.saxutils import escape
 
 ROOT=Path(__file__).resolve().parents[1]; R=ROOT/'results'
+REPOSITORY_URL='https://github.com/ErikJajan/BERTopic'
 S=json.loads((R/'segmentation.json').read_text(encoding='utf-8'))
 M=json.loads((R/'metrics.json').read_text(encoding='utf-8'))
 N=json.loads((R/'interpretation.json').read_text(encoding='utf-8'))
@@ -91,7 +92,7 @@ add('Pregunta de investigación','Sub')
 add('¿Qué temas emergen en las reseñas en español de una muestra de películas muy valoradas, y cómo cambian al exigir grupos de mayor tamaño?')
 add('Entrega y trazabilidad','Sub')
 add('Se incluyen corpus, identificadores de origen, asignaciones, tablas de get_topic_info, ejemplos completos, visualizaciones interactivas y código. Todos los conteos proceden de la ejecución guardada; los nombres e interpretaciones son una lectura analítica asistida por IA.')
-add('<link href="../../src/model.py" color="#126A82">Código de modelado (archivo incluido)</link> · <link href="../../README.md" color="#126A82">Guía y reproducción</link>')
+add('El código y la guía de reproducción están disponibles en el repositorio de GitHub indicado al final del reporte.')
 page()
 heading('1. Corpus y segmentación')
 add('Se utilizó el dataset de Riyosha, <i>Letterboxd Movie Reviews (~90,000)</i>, versión 1, actualizado el 5 de septiembre de 2024 [1]. Contiene reseñas y valoraciones de 250 películas del listado superior de Letterboxd en la captura. No se extrajeron datos de cuentas ni se utilizó una API de pago.')
@@ -196,10 +197,23 @@ refs=[
 for title,url in refs:
     add(escape(title)); add(f'<link href="{escape(url)}" color="#126A82">{escape(url)}</link>','SmallX')
 add('Fuentes consultadas el 30 de octubre de 2026. La revisión exacta del encoder está en data/embedding_metadata.json; el hash SHA-256 del CSV y el embudo de selección están en results/segmentation.json.', 'SmallX')
-add('Código y archivos de respaldo','Sub')
-for title,url in [('Código de adquisición y segmentación','../../src/prepare.py'),('Código BERTopic y métricas','../../src/model.py'),('Código de este reporte','../../src/report.py'),('Guía de ejecución','../../README.md'),('Tabla completa A con nombres','../../results/topic_info_named_A.csv'),('Tabla completa B con nombres','../../results/topic_info_named_B.csv'),('Catálogo A: 52 tópicos y ejemplos','../../results/catalogue_A.md'),('Catálogo B: 6 tópicos y ejemplos','../../results/catalogue_B.md')]:
-    add(f'<link href="{url}" color="#126A82">{title}</link>')
-add('Estos enlaces son relativos al paquete de entrega; conservar su estructura de carpetas. No se creó un repositorio público. Si la institución exige una URL pública, subir el paquete a un repositorio propio o almacenamiento institucional y compartir ese enlace. La entrega local no presupone publicación ni acceso permanente desde otro equipo.', 'SmallX')
+add('Repositorio del proyecto','Sub')
+repository_card=Table([[
+    p('GITHUB · CÓDIGO Y REPRODUCCIÓN','Sub')
+], [
+    p(f'<link href="{REPOSITORY_URL}" color="#126A82"><b>ErikJajan / BERTopic</b><br/>{REPOSITORY_URL}</link>')
+], [
+    p('Código de adquisición, segmentación, modelado y generación del reporte; guía de ejecución, tablas y catálogos de tópicos.','SmallX')
+]],colWidths=[480],hAlign='LEFT')
+repository_card.setStyle(TableStyle([
+    ('BACKGROUND',(0,0),(-1,-1),colors.HexColor('#F0F5F7')),
+    ('LINEBEFORE',(0,0),(0,-1),3,colors.HexColor('#167D9A')),
+    ('LEFTPADDING',(0,0),(-1,-1),14),
+    ('RIGHTPADDING',(0,0),(-1,-1),14),
+    ('TOPPADDING',(0,0),(-1,-1),7),
+    ('BOTTOMPADDING',(0,0),(-1,-1),7),
+]))
+story.append(KeepTogether([repository_card]))
 
 def footer(canvas,doc):
     canvas.saveState(); canvas.setStrokeColor(colors.HexColor('#CBDDE4')); canvas.line(50,45,545,45)
