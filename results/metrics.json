@@ -1,0 +1,45 @@
+{
+  "metrics": [
+    {
+      "configuration": "A",
+      "min_cluster_size": 15,
+      "min_samples": 5,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "topics": 52,
+      "outliers": 1530,
+      "outlier_pct": 47.2952086553323,
+      "diversity_top10": 0.8461538461538461,
+      "silhouette_cosine": 0.054777298122644424,
+      "movie_purity": 0.34017595307917886,
+      "seconds": 57.79492974281311
+    },
+    {
+      "configuration": "B",
+      "min_cluster_size": 35,
+      "min_samples": 10,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "topics": 6,
+      "outliers": 803,
+      "outlier_pct": 24.82225656877898,
+      "diversity_top10": 0.75,
+      "silhouette_cosine": 0.012382427230477333,
+      "movie_purity": 0.0884046052631579,
+      "seconds": 34.00285744667053
+    }
+  ],
+  "segments": 3235,
+  "reviews": 1137,
+  "movies": 241,
+  "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "max_seq_length": 128,
+  "max_observed_tokens": 128,
+  "ari_all": 0.11291175551736962,
+  "ari_common_assigned": 0.08673677220972792,
+  "common_assigned": 1493
+}

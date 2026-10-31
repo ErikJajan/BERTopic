@@ -1,0 +1,36 @@
+{
+  "raw_rows": 90016,
+  "raw_movies": 250,
+  "sha256_csv": "8262fb3bfcce2d9c6766ae245471076f3d9642fc8a9632e843bbaa8cceab00cb",
+  "nonempty": 90003,
+  "unique_reviews": 89698,
+  "language_candidates": 2956,
+  "spanish_reviews": 1175,
+  "eligible_segments": 3098,
+  "eligible_reviews": 1152,
+  "modeled_segments": 3000,
+  "modeled_reviews": 1137,
+  "modeled_movies": 241,
+  "words": {
+    "count": 3000.0,
+    "mean": 71.42566666666667,
+    "std": 17.904319668071196,
+    "min": 20.0,
+    "25%": 69.0,
+    "50%": 80.0,
+    "75%": 80.0,
+    "max": 99.0
+  },
+  "top_movies": {
+    "the-man-who-shot-liberty-valance": 117,
+    "dersu-uzala": 81,
+    "the-first-slam-dunk": 68,
+    "the-best-years-of-our-lives": 61,
+    "ordet": 52,
+    "the-lives-of-others": 45,
+    "taste-of-cherry": 43,
+    "satantango": 42,
+    "the-hunt-2012": 40,
+    "aftersun": 39
+  }
+}

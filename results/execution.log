@@ -1,0 +1,65 @@
+W1030 18:40:21.034000 3368 site-packages\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:  11%|█         | 22/199 [00:00<00:00, 217.34it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1161.45it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (132 > 128). Running this sequence through the model will result in indexing errors
+2026-10-30 18:40:48,264 - BERTopic - Dimensionality - Fitting the dimensionality reduction algorithm
+2026-10-30 18:41:44,192 - BERTopic - Dimensionality - Completed ✓
+2026-10-30 18:41:44,193 - BERTopic - Cluster - Start clustering the reduced embeddings
+2026-10-30 18:41:44,520 - BERTopic - Cluster - Completed ✓
+2026-10-30 18:41:44,534 - BERTopic - Representation - Fine-tuning topics using representation models.
+2026-10-30 18:41:45,002 - BERTopic - Representation - Completed ✓
+{'configuration': 'A', 'min_cluster_size': 15, 'min_samples': 5, 'ngram_range': (1, 1), 'topics': 52, 'outliers': 1530, 'outlier_pct': 47.2952086553323, 'diversity_top10': 0.8461538461538461, 'silhouette_cosine': 0.054777298122644424, 'movie_purity': 0.34017595307917886, 'seconds': 57.79492974281311}
+2026-10-30 18:41:49,678 - BERTopic - Dimensionality - Fitting the dimensionality reduction algorithm
+2026-10-30 18:42:22,489 - BERTopic - Dimensionality - Completed ✓
+2026-10-30 18:42:22,489 - BERTopic - Cluster - Start clustering the reduced embeddings
+2026-10-30 18:42:22,753 - BERTopic - Cluster - Completed ✓
+2026-10-30 18:42:22,757 - BERTopic - Representation - Fine-tuning topics using representation models.
+2026-10-30 18:42:23,243 - BERTopic - Representation - Completed ✓
+{'configuration': 'B', 'min_cluster_size': 35, 'min_samples': 10, 'ngram_range': (1, 2), 'topics': 6, 'outliers': 803, 'outlier_pct': 24.82225656877898, 'diversity_top10': 0.75, 'silhouette_cosine': 0.012382427230477333, 'movie_purity': 0.0884046052631579, 'seconds': 34.00285744667053}
+{
+  "metrics": [
+    {
+      "configuration": "A",
+      "min_cluster_size": 15,
+      "min_samples": 5,
+      "ngram_range": [
+        1,
+        1
+      ],
+      "topics": 52,
+      "outliers": 1530,
+      "outlier_pct": 47.2952086553323,
+      "diversity_top10": 0.8461538461538461,
+      "silhouette_cosine": 0.054777298122644424,
+      "movie_purity": 0.34017595307917886,
+      "seconds": 57.79492974281311
+    },
+    {
+      "configuration": "B",
+      "min_cluster_size": 35,
+      "min_samples": 10,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "topics": 6,
+      "outliers": 803,
+      "outlier_pct": 24.82225656877898,
+      "diversity_top10": 0.75,
+      "silhouette_cosine": 0.012382427230477333,
+      "movie_purity": 0.0884046052631579,
+      "seconds": 34.00285744667053
+    }
+  ],
+  "segments": 3235,
+  "reviews": 1137,
+  "movies": 241,
+  "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "max_seq_length": 128,
+  "max_observed_tokens": 128,
+  "ari_all": 0.11291175551736962,
+  "ari_common_assigned": 0.08673677220972792,
+  "common_assigned": 1493
+}
