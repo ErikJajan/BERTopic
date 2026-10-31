@@ -24,8 +24,8 @@
     "sha256": "6125eadf28ba664a60bf4296147bcbd40b80be93670056fdb229960ac15e2310"
   },
   "output/pdf/reporte_letterboxd.pdf": {
-    "bytes": 424474,
-    "sha256": "47b22cdb2a76737a1c6f009cd705c6586df3f66b3e4864b98b4150a7b9dc9da9"
+    "bytes": 424183,
+    "sha256": "0dc845c5207bdd8922d4208b1b249b81ceac2c842ad41e079899efe5a5be8697"
   },
   "README.md": {
     "bytes": 6872,
@@ -208,8 +208,8 @@
     "sha256": "28994815af4c66cb551d770aa235d1549ccd0b3f3454b10a0d0e2e75de8969d0"
   },
   "src/report.py": {
-    "bytes": 22286,
-    "sha256": "510f1b70e1539909dfe3fe361e4a611fdfc02cc26376c1c2f27648d9674af0b7"
+    "bytes": 21758,
+    "sha256": "e8b4b604159aeca33d8390f1d9985d8846dcb5474b9d5306265ec4e5ce7c3444"
   },
   "src/verify.py": {
     "bytes": 1416,
